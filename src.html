@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <title>Галерея животных</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <script src="scrypt.js"></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo-container">
+        <div class="logo"><img src="images/favicon.png" width="36" /></div>
+        <h1 class="site-title">Галерея животных</h1>
+      </div>
+      <div class="nav-container">
+        <nav class="nav-menu" id="nav-menu">
+          <a href="index.html" class="nav-link">Главная</a>
+          <a href="photos.html" class="nav-link">Фото</a>
+          <a href="videos.html" class="nav-link">Видео</a>
+          <a href="src.html" class="nav-link">Источники</a>
+          <a href="login.html" class="nav-link">Вход</a>
+          <button class="notifications-btn" id="show-notifications">
+            <i class="bi bi-bell-fill"></i>
+            <span class="notification-badge">4</span>
+          </button>
+          <div class="notifications-container" id="notifications" hidden>
+            <div class="notifications-dropdown">
+              <div class="notifications-header">
+                <h3 class="notifications-title">Уведомления</h3>
+              </div>
+              <div class="notifications-list">
+                <div class="notification-item">
+                  <div class="notification-icon"><i class="bi bi-image"></i></div>
+                  <div class="notification-content">
+                    <div class="notification-text">Новые фотографии животных добавлены в галерею</div>
+                    <div class="notification-time">10 минут назад</div>
+                  </div>
+                </div>
+                <div class="notification-item">
+                  <div class="notification-icon"><i class="bi bi-film"></i></div>
+                  <div class="notification-content">
+                    <div class="notification-text">Добавлено новое видео с дикой природой</div>
+                    <div class="notification-time">2 часа назад</div>
+                  </div>
+                </div>
+                <div class="notification-item">
+                  <div class="notification-icon"><i class="bi bi-list-ol"></i></div>
+                  <div class="notification-content">
+                    <div class="notification-text">Обновлены правила публикации материалов</div>
+                    <div class="notification-time">Вчера</div>
+                  </div>
+                </div>
+                <div class="notification-item">
+                  <div class="notification-icon"><i class="bi bi-check-circle"></i></div>
+                  <div class="notification-content">
+                    <div class="notification-text">Ваша фотография была выбрана редакцией</div>
+                    <div class="notification-time">3 дня назад</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div class="nav-toggle" id="nav-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </header>
+    <div class="sources-section" id="sources">
+      <h2 class="section-header">Использованные источники</h2>
+      <div class="source-category">
+        <ul class="sources-list">
+          <li>
+            <a href="https://ru.wikipedia.org" class="source-link" target="_blank"
+              >Википедия
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/1200px-Wikipedia-logo-v2.svg.png" />
+            </a>
+          </li>
+          <li>
+            <a href="https://ru.pinterest.com" class="source-link" target="_blank">
+              Pinterest
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Pinterest.svg/1200px-Pinterest.svg.png" />
+            </a>
+          </li>
+          <li>
+            <a href="https://rutube.ru/" class="source-link" target="_blank">
+              Rutube
+              <img src="https://static.rutube.ru/static/landing/for-creators/rutube.png" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="social-buttons">
+        <a href="https://vk.com" target="_blank" class="social-btn vk">
+          <i class="fab fa-vk"></i>
+        </a>
+        <a href="https://telegram.org" target="_blank" class="social-btn telegram">
+          <i class="fab fa-telegram"></i>
+        </a>
+        <a href="https://whatsapp.com" target="_blank" class="social-btn whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>

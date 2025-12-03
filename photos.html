@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <title>Галерея животных</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <script src="scrypt.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo-container">
+        <div class="logo"><img src="images/favicon.png" width="36" /></div>
+        <h1 class="site-title">Галерея животных</h1>
+      </div>
+      <div class="nav-container">
+        <nav class="nav-menu" id="nav-menu">
+          <a href="index.html" class="nav-link">Главная</a>
+          <a href="photos.html" class="nav-link" id="photos-link">Фото</a>
+          <a href="videos.html" class="nav-link">Видео</a>
+          <a href="src.html" class="nav-link">Источники</a>
+          <a href="login.html" class="nav-link">Вход</a>
+
+          <a href="#" class="nav-link" id="show-favorites-btn"><i class="bi bi-heart"></i></a>
+
+          <button class="notifications-btn" id="show-notifications">
+            <i class="bi bi-bell-fill"></i>
+            <span class="notification-badge">4</span>
+          </button>
+          <div class="notifications-container" id="notifications" hidden></div>
+        </nav>
+        <div class="nav-toggle" id="nav-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </header>
+
+    <div class="tab-container" id="cats-container">
+      <div class="tab-header">
+        <div class="tab-title">Котики</div>
+        <button class="toggle-btn" id="toggleBtn" onclick="toggleTab(this)">Раскрыть <i class="bi bi-caret-down-fill"></i></button>
+      </div>
+      <div class="tab-content" id="tabContent">
+        <div class="content-wrapper">
+          <div class="gallery-image">
+            <img src="https://i.pinimg.com/736x/38/5b/78/385b780dcbeca9f2555eba6adeaa7327.jpg" class="content-image" />
+            <button class="heart-btn" onclick="toggleLike(this)">
+              <i class="bi bi-heart"></i>
+            </button>
+          </div>
+          <div class="gallery-image">
+            <img src="https://i.pinimg.com/736x/40/0a/f5/400af5e09f2ce1229a725f1119d6939b.jpg" class="content-image" />
+            <button class="heart-btn" onclick="toggleLike(this)">
+              <i class="bi bi-heart"></i>
+            </button>
+          </div>
+          <div class="gallery-image">
+            <img src="https://i.pinimg.com/736x/0f/82/6a/0f826a73670921f3c88d0c513103c265.jpg" class="content-image" />
+            <button class="heart-btn" onclick="toggleLike(this)">
+              <i class="bi bi-heart"></i>
+            </button>
+          </div>
+          <div class="gallery-image">
+            <img src="https://i.pinimg.com/736x/73/fa/76/73fa76b27c9934abcefa64fec4d31200.jpg" class="content-image" />
+            <button class="heart-btn" onclick="toggleLike(this)">
+              <i class="bi bi-heart"></i>
+            </button>
+          </div>
+          <div class="gallery-image">
+            <img src="https://i.pinimg.com/736x/14/8f/be/148fbe1f86e65d94b2ac8b028af49fed.jpg" class="content-image" />
+            <button class="heart-btn" onclick="toggleLike(this)">
+              <i class="bi bi-heart"></i>
+            </button>
+          </div>
+          <div class="gallery-image">
+            <img src="https://i.pinimg.com/1200x/6c/36/82/6c368202c55916419766c4c796594ba6.jpg" class="content-image" />
+            <button class="heart-btn" onclick="toggleLike(this)">
+              <i class="bi bi-heart"></i>
+            </button>
+          </div>
+          <div class="gallery-image">
+            <img src="https://i.pinimg.com/736x/d7/ac/4b/d7ac4bc77ed0be8933108c29d2b3cd9b.jpg" class="content-image" />
+            <button class="heart-btn" onclick="toggleLike(this)">
+              <i class="bi bi-heart"></i>
+            </button>
+          </div>
+          <div class="gallery-image">
+            <img src="https://i.pinimg.com/736x/9e/7b/04/9e7b041059f24da6fdf9182dcd7fe28f.jpg" class="content-image" />
+            <button class="heart-btn" onclick="toggleLike(this)">
+              <i class="bi bi-heart"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-container" id="dogs-container">
+      <div class="tab-header">
+        <div class="tab-title">Собачки</div>
+        <button class="toggle-btn" id="toggleBtn" onclick="toggleTab(this)">Раскрыть <i class="bi bi-caret-down-fill"></i></button>
+      </div>
+      <div class="tab-content" id="tabContent">
+        <div class="content-wrapper">
+          <div class="gallery-image">
+            <img src="https://i.pinimg.com/736x/20/f9/e8/20f9e8b433f3cf5c574dc55ec804e73d.jpg" class="content-image" />
+            <button class="heart-btn" onclick="toggleLike(this)">
+              <i class="bi bi-heart"></i>
+            </button>
+          </div>
+          <div class="gallery-image">
+            <img src="https://i.pinimg.com/736x/f4/3b/46/f43b468898dc69b0991a6962d1a6e0b3.jpg" class="content-image" />
+            <button class="heart-btn" onclick="toggleLike(this)">
+              <i class="bi bi-heart"></i>
+            </button>
+          </div>
+          <div class="gallery-image">
+            <img src="https://i.pinimg.com/736x/a0/97/84/a09784bf4103cd7d5b5873e6fe1c4ba7.jpg" class="content-image" />
+            <button class="heart-btn" onclick="toggleLike(this)">
+              <i class="bi bi-heart"></i>
+            </button>
+          </div>
+          <div class="gallery-image">
+            <img src="https://i.pinimg.com/736x/c0/49/d5/c049d5feba050cf865e74e406ab3f5be.jpg" class="content-image" />
+            <button class="heart-btn" onclick="toggleLike(this)">
+              <i class="bi bi-heart"></i>
+            </button>
+          </div>
+          <div class="gallery-image">
+            <img src="https://i.pinimg.com/736x/b1/71/99/b17199488f85f76af363e3d6b5d6f84f.jpg" class="content-image" />
+            <button class="heart-btn" onclick="toggleLike(this)">
+              <i class="bi bi-heart"></i>
+            </button>
+          </div>
+          <div class="gallery-image">
+            <img src="https://i.pinimg.com/736x/a5/7c/72/a57c725340f018b315860449b74c6a4d.jpg" class="content-image" />
+            <button class="heart-btn" onclick="toggleLike(this)">
+              <i class="bi bi-heart"></i>
+            </button>
+          </div>
+          <div class="gallery-image">
+            <img src="https://i.pinimg.com/736x/94/dd/9e/94dd9e34f4a430524c9b1b25e7e9cf5f.jpg" class="content-image" />
+            <button class="heart-btn" onclick="toggleLike(this)">
+              <i class="bi bi-heart"></i>
+            </button>
+          </div>
+          <div class="gallery-image">
+            <img src="https://i.pinimg.com/736x/9c/b8/46/9cb8469ddbda1fbed3d6aa4eae761efd.jpg" class="content-image" />
+            <button class="heart-btn" onclick="toggleLike(this)">
+              <i class="bi bi-heart"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-container" id="favorites-container" style="display: none">
+      <div class="tab-header">
+        <div class="tab-title">Избранное</div>
+      </div>
+      <div class="tab-content active">
+        <div class="content-wrapper" id="favorites-wrapper"></div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="social-buttons">
+        <a href="https://vk.com" target="_blank" class="social-btn vk">
+          <i class="fab fa-vk"></i>
+        </a>
+        <a href="https://telegram.org" target="_blank" class="social-btn telegram">
+          <i class="fab fa-telegram"></i>
+        </a>
+        <a href="https://whatsapp.com" target="_blank" class="social-btn whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script>
+      let favoritesArray = [];
+
+      function toggleTab(button) {
+        const tabContent = button.parentElement.parentElement.querySelector(".tab-content");
+
+        tabContent.classList.toggle("active");
+
+        if (tabContent.classList.contains("active")) {
+          button.innerHTML = 'Скрыть <i class="bi bi-caret-up-fill"></i>';
+        } else {
+          button.innerHTML = 'Раскрыть <i class="bi bi-caret-down-fill"></i>';
+        }
+      }
+
+      function toggleLike(button) {
+        const galleryImage = button.closest(".gallery-image");
+        const img = galleryImage.querySelector(".content-image");
+        const imgSrc = img.src;
+
+        const isLiked = button.classList.contains("liked") || favoritesArray.includes(imgSrc);
+
+        if (isLiked) {
+          const index = favoritesArray.indexOf(imgSrc);
+          if (index > -1) {
+            favoritesArray.splice(index, 1);
+          }
+          updateLikeState(imgSrc, false);
+        } else {
+          if (!favoritesArray.includes(imgSrc)) {
+            favoritesArray.push(imgSrc);
+          }
+          updateLikeState(imgSrc, true);
+        }
+
+        const favoritesWrapper = document.getElementById("favorites-wrapper");
+        if (galleryImage.parentElement === favoritesWrapper && !button.classList.contains("liked")) {
+          galleryImage.remove();
+          if (favoritesArray.length === 0) {
+            favoritesWrapper.innerHTML = '<p style="padding: 20px; text-align: center; color: #555;">В избранном пока пусто.</p>';
+          }
+        }
+      }
+
+      function updateLikeState(imgSrc, shouldBeLiked) {
+        const allImages = document.querySelectorAll(`.content-image[src="${imgSrc}"]`);
+
+        allImages.forEach((image) => {
+          const container = image.closest(".gallery-image");
+          const btn = container.querySelector(".heart-btn");
+          const heartIcon = btn.querySelector("i");
+
+          if (shouldBeLiked) {
+            btn.classList.add("liked");
+            container.classList.add("liked-image");
+            heartIcon.classList.remove("bi-heart");
+            heartIcon.classList.add("bi-heart-fill");
+
+            heartIcon.classList.add("like-animation");
+            setTimeout(() => {
+              heartIcon.classList.remove("like-animation");
+            }, 750);
+          } else {
+            btn.classList.remove("liked");
+            container.classList.remove("liked-image");
+            heartIcon.classList.add("bi-heart");
+            heartIcon.classList.remove("bi-heart-fill");
+          }
+        });
+      }
+
+      function showFavorites() {
+        const containers = document.querySelectorAll(".tab-container");
+        const favoritesContainer = document.getElementById("favorites-container");
+        const favoritesWrapper = document.getElementById("favorites-wrapper");
+
+        if (containers != null) {
+          containers.forEach((container) => {
+            container.style.display = "none";
+          });
+        }
+        favoritesContainer.style.display = "block";
+
+        favoritesWrapper.innerHTML = "";
+
+        if (favoritesArray.length === 0) {
+          favoritesWrapper.innerHTML = '<p style="padding: 20px; text-align: center; color: #555;">В избранном пока пусто.</p>';
+          return;
+        }
+
+        favoritesArray.forEach((imgSrc) => {
+          const itemHTML = `
+              <div class="gallery-image liked-image">
+                  <img src="${imgSrc}" class="content-image" />
+                  <button class="heart-btn liked" onclick="toggleLike(this)">
+                      <i class="bi bi-heart-fill"></i>
+                  </button>
+              </div>
+          `;
+          favoritesWrapper.innerHTML += itemHTML;
+        });
+      }
+
+      document.getElementById("show-favorites-btn").addEventListener("click", function (e) {
+        e.preventDefault();
+        showFavorites();
+      });
+
+      function returnTabs(e) {
+        e.preventDefault();
+        const containers = document.querySelectorAll(".tab-container");
+        containers.forEach((container) => {
+          container.style.display = "block";
+        });
+        document.getElementById("favorites-container").style.display = "none";
+      }
+      document.getElementById("photos-link").addEventListener("click", returnTabs);
+    </script>
+  </body>
+</html>

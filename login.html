@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <title>Галерея животных</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <script src="scrypt.js"></script>
+  </head>
+
+  <body style="background: linear-gradient(135deg, #fff3f3 50%, #c6c6c6 100%)">
+    <header class="header">
+      <div class="logo-container">
+        <div class="logo"><img src="images/favicon.png" width="36" /></div>
+        <h1 class="site-title">Галерея животных</h1>
+      </div>
+      <div class="nav-container">
+        <nav class="nav-menu" id="nav-menu">
+          <a href="index.html" class="nav-link">Главная</a>
+          <a href="photos.html" class="nav-link">Фото</a>
+          <a href="videos.html" class="nav-link">Видео</a>
+          <a href="src.html" class="nav-link">Источники</a>
+          <a href="login.html" class="nav-link">Вход</a>
+          <button class="notifications-btn" id="show-notifications">
+            <i class="bi bi-bell-fill"></i>
+            <span class="notification-badge">4</span>
+          </button>
+          <div class="notifications-container" id="notifications" hidden>
+            <div class="notifications-dropdown">
+              <div class="notifications-header">
+                <h3 class="notifications-title">Уведомления</h3>
+              </div>
+              <div class="notifications-list">
+                <div class="notification-item">
+                  <div class="notification-icon"><i class="bi bi-image"></i></div>
+                  <div class="notification-content">
+                    <div class="notification-text">Новые фотографии животных добавлены в галерею</div>
+                    <div class="notification-time">10 минут назад</div>
+                  </div>
+                </div>
+                <div class="notification-item">
+                  <div class="notification-icon"><i class="bi bi-film"></i></div>
+                  <div class="notification-content">
+                    <div class="notification-text">Добавлено новое видео с дикой природой</div>
+                    <div class="notification-time">2 часа назад</div>
+                  </div>
+                </div>
+                <div class="notification-item">
+                  <div class="notification-icon"><i class="bi bi-list-ol"></i></div>
+                  <div class="notification-content">
+                    <div class="notification-text">Обновлены правила публикации материалов</div>
+                    <div class="notification-time">Вчера</div>
+                  </div>
+                </div>
+                <div class="notification-item">
+                  <div class="notification-icon"><i class="bi bi-check-circle"></i></div>
+                  <div class="notification-content">
+                    <div class="notification-text">Ваша фотография была выбрана редакцией</div>
+                    <div class="notification-time">3 дня назад</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div class="nav-toggle" id="nav-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </header>
+    <div class="auth-container">
+      <div class="shape circle" id="shape1"></div>
+      <div class="shape square" id="shape2"></div>
+      <div class="shape triangle" id="shape3"></div>
+      <div class="shape circle" id="shape4"></div>
+      <div class="shape square" id="shape5"></div>
+      <div class="shape triangle" id="shape6"></div>
+      <div class="shape circle" id="shape7"></div>
+      <div class="shape square" id="shape8"></div>
+      <div class="shape triangle" id="shape9"></div>
+      <div class="auth-form">
+        <div class="form-header">
+          <h2>Добро пожаловать!</h2>
+          <p>Войдите в свой аккаунт или создайте новый</p>
+        </div>
+        <div class="form-tabs">
+          <div class="tab active" data-tab="login">Вход</div>
+          <div class="tab" data-tab="register">Регистрация</div>
+        </div>
+
+        <div>
+          <div class="form-group">
+            <label class="form-label">
+              <i class="bi bi-person-fill"></i>
+              Логин, email или телефон
+            </label>
+            <input type="text" class="form-input" placeholder="Введите ваши данные" id="login" required />
+          </div>
+
+          <div class="form-group password-toggle">
+            <label class="form-label">
+              <i class="bi bi-lock-fill"></i>
+              Пароль
+            </label>
+            <input type="password" class="form-input" placeholder="Введите пароль" id="password" required />
+            <button type="button" class="toggle-password">
+              <i class="bi bi-eye-fill"></i>
+            </button>
+          </div>
+          <div class="form-group password-toggle" id="password_confirm" hidden>
+            <label class="form-label">
+              <i class="bi bi-lock-fill"></i>
+              Подтверждение пароля
+            </label>
+            <input type="password" class="form-input" placeholder="Введите пароль повторно" id="password2" required />
+            <button type="button" class="toggle-password">
+              <i class="bi bi-eye-fill"></i>
+            </button>
+          </div>
+
+          <div class="form-options">
+            <label class="remember-me">
+              <input type="checkbox" id="remember-me" />
+              Запомнить меня
+            </label>
+            <a href="#" class="forgot-password">Забыли пароль?</a>
+          </div>
+
+          <button type="submit" class="submit-btn" id="sign_in">
+            <i class="bi bi-arrow-return-left" id="sign_in_icon"></i>
+            Войти в аккаунт
+          </button>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="social-buttons">
+        <a href="https://vk.com" target="_blank" class="social-btn vk">
+          <i class="fab fa-vk"></i>
+        </a>
+        <a href="https://telegram.org" target="_blank" class="social-btn telegram">
+          <i class="fab fa-telegram"></i>
+        </a>
+        <a href="https://whatsapp.com" target="_blank" class="social-btn whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </footer>
+    <script>
+      document.querySelectorAll(".tab").forEach((tab) => {
+        tab.addEventListener("click", function () {
+          document.querySelectorAll(".tab").forEach((t) => t.classList.remove("active"));
+          this.classList.add("active");
+          if (this.getAttribute("data-tab") == "register") {
+            document.querySelector("#password_confirm").removeAttribute("hidden");
+            document.querySelector("#sign_in").innerHTML = '<i class="bi bi-arrow-return-left" id="sign_in_icon"></i>Зарегестрироваться';
+            button = document.getElementById("sign_in");
+            icon = document.getElementById("sign_in_icon");
+          } else {
+            document.querySelector("#password_confirm").setAttribute("hidden", "");
+            document.querySelector("#sign_in").innerHTML = '<i class="bi bi-arrow-return-left" id="sign_in_icon"></i>Войти в аккаунт';
+            button = document.getElementById("sign_in");
+            icon = document.getElementById("sign_in_icon");
+          }
+        });
+      });
+
+      var button = document.getElementById("sign_in");
+      var icon = document.getElementById("sign_in_icon");
+
+      button.addEventListener("click", function () {
+        icon.className = "bi bi-gear-wide spin-animation";
+        setTimeout(() => {
+          icon.className = "bi bi-arrow-return-left";
+        }, 2000);
+      });
+
+      document.querySelectorAll(".toggle-password").forEach((toggle) => {
+        toggle.addEventListener("click", function () {
+          const passwordInput = this.previousElementSibling;
+          const icon = this.querySelector("i");
+          if (passwordInput.type == "password") {
+            passwordInput.type = "text";
+            icon.classList.remove("bi-eye-fill");
+            icon.classList.add("bi-eye-slash-fill");
+          } else {
+            passwordInput.type = "password";
+            icon.classList.remove("bi-eye-slash-fill");
+            icon.classList.add("bi-eye-fill");
+          }
+        });
+      });
+
+      function randomizeShapes() {
+        const shapes = document.querySelectorAll(".shape");
+
+        shapes.forEach((shape) => {
+          const randomX = Math.random() * 100; // 0-100%
+          const randomY = Math.random() * 100; // 0-100%
+
+          const randomDelay = Math.random() * -20; //-20s-0s
+
+          shape.style.setProperty("--x", randomX);
+          shape.style.setProperty("--y", randomY);
+          shape.style.animationDelay = `${randomDelay}s`;
+        });
+      }
+
+      function createRandomMovement() {
+        const shapes = document.querySelectorAll(".shape");
+
+        shapes.forEach((shape) => {
+          const keyframes = `
+                @keyframes randomFloat-${shape.id} {
+                    0% {
+                        transform: translate(0, 0) rotate(0deg);
+                    }
+                    25% {
+                        transform: translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px) rotate(${Math.random() * 360}deg);
+                    }
+                    50% {
+                        transform: translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px) rotate(${Math.random() * 360}deg);
+                    }
+                    75% {
+                        transform: translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px) rotate(${Math.random() * 360}deg);
+                    }
+                    100% {
+                        transform: translate(0, 0) rotate(360deg);
+                    }
+                }`;
+
+          const style = document.createElement("style");
+          style.textContent = keyframes;
+          document.head.appendChild(style);
+
+          const duration = Math.random() * 30 + 20; // 20s-50s
+          shape.style.animation = `randomFloat-${shape.id} ${duration}s infinite linear`;
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        randomizeShapes();
+        createRandomMovement();
+      });
+    </script>
+  </body>
+</html>
