@@ -303,6 +303,10 @@ body {
     font-size: 1.2rem;
   }
 
+  .notifications-dropdown {
+    width: 20%;
+  }
+
   .notification-popup-container .notification-icon {
     font-size: 2rem;
     width: 48px;
