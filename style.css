@@ -245,6 +245,23 @@ body {
   color: #333;
 }
 
+.close-notifications-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #999;
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+}
+
+.close-notifications-btn:hover {
+  color: #333;
+}
+
 .notification-popup-container .notification-icon {
   font-size: 1.4rem;
   margin-right: 12px;
@@ -303,10 +320,6 @@ body {
     font-size: 1.2rem;
   }
 
-  .notifications-dropdown {
-    width: 20%;
-  }
-
   .notification-popup-container .notification-icon {
     font-size: 2rem;
     width: 48px;
@@ -320,6 +333,10 @@ body {
 }
 
 @media screen and (max-width: 1080px) {
+  .logo {
+    width: 15%;
+  }
+
   .nav-toggle {
     display: flex;
   }
@@ -363,9 +380,11 @@ body {
   }
 
   .notifications-dropdown {
+    position: fixed;
+    top: 80px;
+    right: 10px;
     width: 280px;
-    right: 100%;
-    top: 0;
+    z-index: 1001;
   }
   .notifications-container {
     position: initial;

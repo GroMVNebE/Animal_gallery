@@ -48,6 +48,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // Закрыть уведомления
+  const closeNotificationsBtn = document.getElementById("close-notifications");
+  if (closeNotificationsBtn) {
+    closeNotificationsBtn.addEventListener("click", function () {
+      notifications.setAttribute("hidden", "");
+    });
+  }
+
   // Вывод всплывающих уведомлений
   let popupContainer = null;
   function getPopupContainer() {
